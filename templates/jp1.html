@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="sidenav">
+    <h1>Check who's live!</h1>
+    <a href="/">Members</a>
+    <a href="/jp0">JP 0th Gen</a>
+    <a style="background-color:  #46c2f6" href="/jp1">JP 1st Gen</a>
+    <a href="/jp2">JP 2nd Gen</a>
+    <a href="/jpgamers">JP Gamers</a>
+    <a href="/jp3">JP 3rd Gen</a>
+    <a href="/jp4">JP 4th Gen</a>
+    <a href="/jp5">JP 5th Gen</a>
+    <a href="/id1">Hololive ID</a>
+    <a href="/en1">Hololive EN</a>
+    <a href="/all">All</a>
+</div>
+
+{% if row1length < 1 %}
+<h1 style="text-align: center">There are no vtubers live at the moment. Check another generation!</h1>
+{% else %}
+<h1 class="heading">First Gen Members Currently Live</h1>
+
+<table>
+    <tr>
+        {% for i in range(row1length) %}
+            <td style="border-bottom: 0px;">
+                <a target="_blank" href="{{row1v[i]}}">
+                <img src="{{row1tb[i]}}" alt="thumbnail"> </a>
+            </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for i in range(row1length) %}
+            <td style="border-top: 0px;">
+                <a target="_blank" href="{{row1ch[i]}}">
+                    <img src="{{row1pfp[i]}}" alt="pfp", class="pfp"> </a>
+                <h1 class="channel">{{row1name[i]}}</h1>
+            </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for i in range(row2length) %}
+            <td style="border-bottom: 0px;">
+                <a target="_blank" href="{{row2v[i]}}">
+                <img src="{{row2tb[i]}}" alt="thumbnail"> </a>
+            </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for i in range(row2length) %}
+            <td style="border-top: 0px;">
+                <a target="_blank" href="{{row2ch[i]}}">
+                    <img src="{{row2pfp[i]}}" alt="pfp", class="pfp"> </a>
+                <h1 class="channel">{{row2name[i]}}</h1>
+            </td>
+        {% endfor %}
+    </tr>
+
+</table>
+{% endif %}
+{% endblock %}
