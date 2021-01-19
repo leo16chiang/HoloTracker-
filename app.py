@@ -6,7 +6,7 @@ from urllib.request import urlopen
 app = Flask(__name__)
 
 # Google API Key
-key = "AIzaSyCcQcT54EEEHwZJdgjDp3RXjT_p4glK3Tg"
+key = YOUR_API_KEY_HERE
 
 # Vtuber object
 class vtuber:
